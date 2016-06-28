@@ -1,7 +1,6 @@
-package java.com.intellij.rexx;
+package com.intellij.rexx;
 
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
+import com.intellij.openapi.fileTypes.*;
 import org.jetbrains.annotations.NotNull;
 
 public class RexxFileTypeFactory extends FileTypeFactory {

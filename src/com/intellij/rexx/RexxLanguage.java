@@ -1,4 +1,4 @@
-package java.com.intellij.rexx;
+package com.intellij.rexx;
 
 import com.intellij.lang.Language;
 

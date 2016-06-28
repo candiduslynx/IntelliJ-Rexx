@@ -22,7 +22,7 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileTypeFactory implementation="java.com.intellij.rexx.RexxFileTypeFactory"/>
+    <fileTypeFactory implementation="com.intellij.rexx.RexxFileTypeFactory"/>
   </extensions>
 
   <actions>
