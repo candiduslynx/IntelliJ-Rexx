@@ -97,8 +97,8 @@ address_                    :   KWD_ADDRESS
                             ;
 resources                   :   ( KWD_STREAM | KWD_STEM ) VAR_SYMBOL ;
 arg_                        :   KWD_ARG template_list? ;
-call_                       :   KWD_CALL ( callon_spec | taken_constant call_parms? ) ;
-  callon_spec               :   KWD_ON callable_condition ( KWD_NAME taken_constant )?
+call_                       :   KWD_CALL ( callon_spec | function_name call_parms? ) ;
+  callon_spec               :   KWD_ON callable_condition ( KWD_NAME function_name )?
                             |   KWD_OFF callable_condition
                             ;
     callable_condition      :   KWD_ERROR
@@ -179,7 +179,7 @@ queue_                      :   KWD_QUEUE expression? ;
 return_                     :   KWD_RETURN expression? ;
 say_                        :   KWD_SAY expression? ;
 signal_                     :   KWD_SIGNAL ( signal_spec | valueexp | taken_constant ) ;
-  signal_spec               :   KWD_ON condition ( KWD_NAME taken_constant )?
+  signal_spec               :   KWD_ON condition ( KWD_NAME function_name )?
                             |   KWD_OFF condition
                             ;
     condition               :   callable_condition
