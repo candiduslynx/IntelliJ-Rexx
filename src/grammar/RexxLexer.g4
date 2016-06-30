@@ -6,7 +6,8 @@ STMT_INCLUDE                    :   Comment_S Percent_sign_ KWD_INCLUDE Bo Var_S
 fragment KWD_INCLUDE            :   I N C L U D E ;
 
 // Skippable stuff
-BETWEEN                         :   Between_                -> channel(HIDDEN) ;
+COMMENT                         :   Comment_                -> channel(HIDDEN);
+WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
 
 // Delimeter for expresstions
 DELIM                           :   Delim_ ;
@@ -87,15 +88,15 @@ KWD_WITH                        :   W I T H ;
 BR_O                            :   Br_O_ ;
 BR_C                            :   Br_C_ ;
 
-// String and concatenation
-STRING                          :   String_ ;
-CONCAT                          :   Blank
-                                |   VBar_ VBar_ ;
 // Label, const, var, number
 NUMBER                          :   Number_ ;
 CONST_SYMBOL                    :   Const_symbol_ ;
 VAR_SYMBOL                      :   Var_Symbol_ ;
 
+// String and concatenation
+STRING                          :   String_ ;
+CONCAT                          :   Blank
+                                |   VBar_ VBar_ ;
 
 // Operations
 // Assignment (also comparison and template operator)
@@ -151,8 +152,6 @@ EXCLAMATION                     :   Exclamation_mark_ ;
 
 // --------------------------------------------------------
 // Fragments
-// Skippable stuff
-fragment Between_               :   ( Comment_ | Whitespaces_ )+ ;
 // Comments
 fragment Comment_               :   Comment_S Commentpart*? Comment_E ;
 fragment Comment_E              :   Asterisk_ Slash_ ;
@@ -251,43 +250,11 @@ fragment CONST_RS               :   R S ;
 fragment CONST_SIGL             :   S I G L ;
 fragment Digit_                 :   [0-9] ;
 // Number
-fragment Number_                :   Plain_number Exponent_?
-                                |   Binary_string
-                                |   Hex_string
-                                ;
+fragment Number_                :   Plain_number Exponent_? ;
 fragment Plain_number           :   Digit_+ Stop_? Digit_*
                                 |   Stop_ Digit_+
                                 ;
 fragment Exponent_              :   E ( Plus_ | Minus_ )? Digit_+ ;
-// Hex string
-fragment Hex_string             :   Quoted_Hex_string X ;
-fragment Quoted_Hex_string      :   Quote_ Hex_string_ Quote_
-                                |   Apostrophe_ Hex_string_ Apostrophe_
-                                ;
-fragment Hex_string_            :   Hex_digit Break_hex_digit_pair*
-                                |   ( Hex_digit Hex_digit Break_hex_digit_pair* )?
-                                ;
-fragment Hex_digit              :   Digit_
-                                |   A
-                                |   B
-                                |   C
-                                |   D
-                                |   E
-                                |   F
-                                ;
-fragment Break_hex_digit_pair   :   Bo Hex_digit Hex_digit ;
-// Bin string
-fragment Binary_string          :   Quoted_Bin_string B ;
-fragment Quoted_Bin_string      :   Quote_ Bin_string_ Quote_
-                                |   Apostrophe_ Bin_string_ Apostrophe_
-                                ;
-fragment Bin_string_            :   Bin_digit Bin_digit? Bin_digit? Break_bin_digit_quad*
-                                |   ( Bin_digit Bin_digit Bin_digit Bin_digit Break_bin_digit_quad* ) ?
-                                ;
-fragment Bin_digit              :   '0'
-                                |   '1'
-                                ;
-fragment Break_bin_digit_quad : Bo Bin_digit Bin_digit Bin_digit Bin_digit ;
 
 // String and concatenation
 fragment String_                :   Quoted_string ;

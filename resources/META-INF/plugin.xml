@@ -23,6 +23,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="com.intellij.rexx.RexxFileTypeFactory"/>
+    <lang.syntaxHighlighterFactory key="Rexx" implementationClass="com.intellij.rexx.RexxSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="com.intellij.rexx.RexxColorSettingsPage"/>
   </extensions>
 
   <actions>

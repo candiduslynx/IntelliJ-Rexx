@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a587f70-6134-40e5-9698-1519f4edb35b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/icons/com/intellij/rexx/Rexx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxLexer.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/java/com/intellij/rexx/Icons.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileTypeFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/java/com/intellij/rexx/RexxLanguage.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/grammar/RexxLexer.g4" afterPath="$PROJECT_DIR$/src/grammar/RexxLexer.g4" />
     </list>
     <ignored path="IntelliJ-Rexx.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,21 +25,38 @@
     <favorites_list name="IntelliJ-Rexx" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Icons.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/Icons.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="RexxSyntaxHighlighter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxSyntaxHighlighter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="80">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rexx.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/com/intellij/rexx/Rexx.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="RexxColorSettingsPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxColorSettingsPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="628">
+              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1013#1014#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1079#1080#0" expanded="true" />
+                <element signature="e#1108#1109#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1473#1474#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1570#1571#0" expanded="true" />
+                <element signature="e#1611#1612#0" expanded="true" />
+                <element signature="e#1667#1668#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -75,17 +86,34 @@
         <option value="$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileTypeFactory.java" />
         <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxLanguage.java" />
         <option value="$PROJECT_DIR$/src/com/intellij/rexx/Icons.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxFileType.java" />
         <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxFileTypeFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxASTFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/RexxElementRef.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/FunctionSubtree.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/FunctionRef.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/test/test.rexx" />
+        <option value="$PROJECT_DIR$/src/grammar/RexxParser.g4" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/VariableRef.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/Var_SymbolPSINode.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/CallSubtree.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/psi/RexxPSIFileRoot.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxParserDefinition.java" />
+        <option value="$PROJECT_DIR$/src/grammar/RexxLexer.g4" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxSyntaxHighlighterFactory.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxColorSettingsPage.java" />
+        <option value="$PROJECT_DIR$/src/com/intellij/rexx/RexxSyntaxHighlighter.java" />
+        <option value="$PROJECT_DIR$/src/t.rexx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1216" />
-    <option name="height" value="1936" />
+    <option name="width" value="1616" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -94,7 +122,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -113,7 +141,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -144,6 +171,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grammar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -196,21 +227,18 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rexx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/antlr-4.5.3-complete.jar!/" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rexx" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4::/auto-gen" value="false" />
@@ -218,6 +246,11 @@
     <property name="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4::/language" value="Java" />
     <property name="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/src/grammar/RexxParser.g4::/auto-gen" value="false" />
+    <property name="$PROJECT_DIR$/src/grammar/RexxParser.g4::/package" value="com.intellij.rexx" />
+    <property name="$PROJECT_DIR$/src/grammar/RexxParser.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/src/grammar/RexxParser.g4::/gen-listener" value="true" />
+    <property name="$PROJECT_DIR$/src/grammar/RexxParser.g4::/gen-visitor" value="false" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -226,6 +259,11 @@
     <option name="SPLIT_DIVIDER_POSITION" value="300" />
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shchea\Documents\Projects\IntelliJ-Rexx\src" />
+    </key>
   </component>
   <component name="RunManager" selected="Plugin.Plugin">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -452,36 +490,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1216" height="1936" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="FaTPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -495,22 +533,22 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982263" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982263" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32705098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="FaTPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -526,6 +564,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/antlr4-adapter" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -535,63 +578,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxFileType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-          <folding>
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxFileTypeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileTypeFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileType.java" />
-    <entry file="file://$PROJECT_DIR$/src/t.rexx" />
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/t.rexx" />
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntelliJ-Rexx.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/grammars/com/intellij/rexx/RexxParser.g4" />
-    <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/Icons.java" />
-    <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/RexxLanguage.java" />
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/icons/com/intellij/rexx/Rexx.png" />
     <entry file="file://$PROJECT_DIR$/src/t.rexx" />
     <entry file="file://$PROJECT_DIR$/resources/icons/com/intellij/rexx/testme.rexx" />
@@ -604,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -613,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,27 +615,11 @@
     <entry file="file://$PROJECT_DIR$/resources/icons/com/intellij/rexx/testme.rexx" />
     <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileType.java" />
     <entry file="file://$PROJECT_DIR$/src/java/com/intellij/rexx/RexxFileTypeFactory.java" />
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxLanguage.java" />
-    <entry file="file://$PROJECT_DIR$/src/t.rexx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxFileTypeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,24 +627,217 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
-          <folding>
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxParserBaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxParserListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxParser.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1037">
+          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/FunctionSubtree.java" />
+    <entry file="file://$PROJECT_DIR$/test/result/test.rexx.result.txt" />
+    <entry file="file://$PROJECT_DIR$/test/test.rexx" />
+    <entry file="file://$PROJECT_DIR$/gen/com/intellij/rexx/RexxLexer.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxASTFactory.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/VariableRef.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/RexxElementRef.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/FunctionRef.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/Var_SymbolPSINode.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/CallSubtree.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/psi/RexxPSIFileRoot.java" />
+    <entry file="file://$PROJECT_DIR$/resources/com/intellij/rexx/Rexx.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/Icons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxParserDefinition.java" />
+    <entry file="file://$PROJECT_DIR$/src/grammar/RexxParser.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="222" column="15" selection-start-line="222" selection-start-column="15" selection-end-line="222" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammar/RexxLexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="17" />
+          <caret line="83" column="17" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="17" />
+          <caret line="82" column="17" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="17" />
+          <caret line="81" column="17" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="17" />
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="17" />
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="17" />
+          <caret line="78" column="17" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="17" />
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="17" />
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="17" />
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="17" />
+          <caret line="74" column="17" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="17" />
+          <caret line="73" column="17" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="17" />
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="17" />
+          <caret line="71" column="17" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="17" />
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="17" />
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="17" />
+          <caret line="68" column="17" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="17" />
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="17" />
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="17" />
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="17" />
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="17" />
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="17" />
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="17" />
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="17" />
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="17" />
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="17" />
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="17" />
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="17" />
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="17" />
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="17" />
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="17" />
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="17" />
+          <caret line="52" column="17" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="17" />
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="17" />
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="17" />
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="17" />
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="17" />
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="17" />
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="17" />
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="17" />
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="17" />
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="17" />
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="17" />
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="17" />
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="17" />
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="17" />
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="17" />
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="17" />
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="17" />
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="17" />
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="17" />
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="17" />
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="17" />
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="17" />
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="17" />
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="17" />
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="17" />
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="17" />
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="17" />
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="17" />
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="17" />
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="17" />
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="17" />
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="17" />
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="17" />
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="17" />
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="17" />
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="17" />
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxSyntaxHighlighterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/com/intellij/rexx/Rexx.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxColorSettingsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rexx" />
+    <entry file="file://$PROJECT_DIR$/src/com/intellij/rexx/RexxSyntaxHighlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/t.rexx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GDDRDDAZ.rexx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+        </state>
       </provider>
     </entry>
   </component>
