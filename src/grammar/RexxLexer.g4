@@ -6,8 +6,7 @@ STMT_INCLUDE                    :   Comment_S Percent_sign_ KWD_INCLUDE Bo Var_S
 fragment KWD_INCLUDE            :   I N C L U D E ;
 
 // Skippable stuff
-BLOCK_COMMENT                   :   Comment_block_          -> channel(HIDDEN);
-LINE_COMMENT                    :   Comment_simple_         -> channel(HIDDEN);
+COMMENT                         :   Comment_                -> channel(HIDDEN);
 WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
 
 // Delimeter for expresstions
@@ -154,24 +153,20 @@ EXCLAMATION                     :   Exclamation_mark_ ;
 // --------------------------------------------------------
 // Fragments
 // Comments
-// Line comment
-fragment Comment_simple_        :   Comment_S Commentpart_*? Comment_E ;
+fragment Comment_               :   Comment_S Commentpart*? Comment_E ;
 fragment Comment_E              :   Asterisk_ Slash_ ;
 fragment Comment_S              :   Slash_ Asterisk_ ;
-fragment Commentpart_           :   Comment_simple_
-                                |   ( Slash_ | Asterisk_ | Comment_char_ )+?
+fragment Commentpart            :   Comment_
+                                |   Commentpart_simple_+?
                                 ;
-fragment Comment_char_          :   ~[/*\n\r];
-// Block comment - spans for several lines
-fragment Comment_block_         :   Comment_S Commentpart_block_*? Comment_E ;
-fragment Commentpart_block_     :   Comment_block_
-                                |   Commentpart_
-                                |   ( Slash_ | Asterisk_ | Comment_char_ | Eol_)+?
+fragment Commentpart_simple_    :   Slash_
+                                |   Asterisk_
+                                |   Comment_char_
                                 ;
+fragment Comment_char_          :   ~[/*];
 // Whitespaces
 fragment Whitespaces_           :   ( Blank | Continue_ )+ ;
-fragment Continue_              :   Comma_ ( Comment_simple_ | Blank )*? Eol_;
-
+fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
 // Delimeter
 fragment Delim_                 :   Scol_ EOL?
                                 |   EOL
@@ -182,7 +177,6 @@ fragment Eol_                   :   New_Line_ Caret_Return_
                                 |   New_Line_
                                 |   Caret_Return_
                                 ;
-
 // Whitespaces
 fragment Bo                     :   Blank+ ;
 fragment Blank                  :   Space_
@@ -192,7 +186,6 @@ fragment Other_blank_character  :   Form_Feed_
                                 |   HTab_
                                 |   VTab_
                                 ;
-
 // Label, const, var, number
 // Label, var
 fragment Var_Symbol_            :   General_letter Var_symbol_char*;
@@ -258,7 +251,6 @@ fragment Plain_number           :   Digit_+ Stop_? Digit_*
                                 |   Stop_ Digit_+
                                 ;
 fragment Exponent_              :   E ( Plus_ | Minus_ )? Digit_+ ;
-
 // String and concatenation
 fragment String_                :   Quoted_string ;
 fragment Quoted_string          :   Quotation_mark_string
@@ -293,7 +285,6 @@ fragment Operator_only          :   Plus_
                                 |   More_
                                 |   Less_
                                 ;
-
 fragment Other_character        :   ~[\"\'\n\r\*/] ;
 fragment Not_                   :   Backslash_
                                 |   Other_negator

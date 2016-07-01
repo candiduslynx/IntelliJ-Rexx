@@ -20,9 +20,7 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		createTextAttributesKey("REXX_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
 	public static final TextAttributesKey STRING =
 		createTextAttributesKey("REXX_STRING", DefaultLanguageHighlighterColors.STRING);
-	public static final TextAttributesKey LINE_COMMENT =
-		createTextAttributesKey("REXX_LINE_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
-	public static final TextAttributesKey BLOCK_COMMENT =
+	public static final TextAttributesKey COMMENT =
 		createTextAttributesKey("REXX_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
 
 	static {
@@ -124,11 +122,8 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.STRING :
 				attrKey = STRING;
 				break;
-			case RexxLexer.LINE_COMMENT :
-				attrKey = LINE_COMMENT;
-				break;
-			case RexxLexer.BLOCK_COMMENT:
-				attrKey = BLOCK_COMMENT;
+			case RexxLexer.COMMENT :
+				attrKey = COMMENT;
 				break;
 			default :
 				return EMPTY_KEYS;
