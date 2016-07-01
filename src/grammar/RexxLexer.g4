@@ -8,7 +8,7 @@ fragment KWD_INCLUDE            :   I N C L U D E ;
 // Skippable stuff
 COMMENT                         :   Comment_                -> channel(HIDDEN);
 WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
-
+CONTINUATION                    :   Continue_               -> channel(HIDDEN);
 // Delimeter for expresstions
 DELIM                           :   Delim_ ;
 
@@ -165,7 +165,7 @@ fragment Commentpart_simple_    :   Slash_
                                 ;
 fragment Comment_char_          :   ~[/*];
 // Whitespaces
-fragment Whitespaces_           :   ( Blank | Continue_ )+ ;
+fragment Whitespaces_           :   Blank+ ;
 fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
 // Delimeter
 fragment Delim_                 :   Scol_ EOL?

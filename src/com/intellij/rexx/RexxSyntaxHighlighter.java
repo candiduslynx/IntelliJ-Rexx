@@ -193,6 +193,7 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 				attrKey = STRING;
 				break;
 			case RexxLexer.COMMENT :
+			case RexxLexer.CONTINUATION:
 				attrKey = COMMENT;
 				break;
 			default :
