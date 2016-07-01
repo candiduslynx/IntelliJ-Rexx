@@ -22,6 +22,21 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		createTextAttributesKey("REXX_STRING", DefaultLanguageHighlighterColors.STRING);
 	public static final TextAttributesKey COMMENT =
 		createTextAttributesKey("REXX_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
+	public static final TextAttributesKey INCLUDE =
+		createTextAttributesKey("REXX_INCLUDE", DefaultLanguageHighlighterColors.METADATA);
+
+	public static final TextAttributesKey COLONS =
+		createTextAttributesKey("REXX_COLONS", DefaultLanguageHighlighterColors.SEMICOLON);
+	public static final TextAttributesKey OPERATION_SIGN =
+		createTextAttributesKey("REXX_OPERATION_SIGN", DefaultLanguageHighlighterColors.OPERATION_SIGN);
+	public static final TextAttributesKey COMMA =
+		createTextAttributesKey("REXX_COMMA", DefaultLanguageHighlighterColors.COMMA);
+	public static final TextAttributesKey PARENTHESES =
+		createTextAttributesKey("REXX_PARENTHESES", DefaultLanguageHighlighterColors.PARENTHESES);
+	public static final TextAttributesKey NUMBER =
+		createTextAttributesKey("REXX_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
+	public static final TextAttributesKey CONST =
+		createTextAttributesKey("REXX_CONST", DefaultLanguageHighlighterColors.CONSTANT);
 
 	static {
 		PSIElementTypeFactory.defineLanguageIElementTypes(RexxLanguage.INSTANCE,
@@ -44,6 +59,61 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		int ttype = myType.getANTLRTokenType();
 		TextAttributesKey attrKey;
 		switch ( ttype ) {
+			case RexxLexer.CONST_SYMBOL:
+				attrKey = CONST;
+				break;
+			case RexxLexer.NUMBER:
+				attrKey = NUMBER;
+				break;
+			case RexxLexer.BR_O:
+			case RexxLexer.BR_C:
+				attrKey	= PARENTHESES;
+				break;
+			case RexxLexer.COMMA:
+				attrKey = COMMA;
+				break;
+			case RexxLexer.DELIM:
+			case RexxLexer.COLON:
+				attrKey = COLONS;
+				break;
+			case RexxLexer.CONCAT:
+			case RexxLexer.EQ:
+			case RexxLexer.PLUS:
+			case RexxLexer.MINUS:
+			case RexxLexer.MUL:
+			case RexxLexer.DIV:
+			case RexxLexer.QUOTINENT:
+			case RexxLexer.REMAINDER:
+			case RexxLexer.POW:
+			case RexxLexer.NOT:
+			case RexxLexer.OR:
+			case RexxLexer.XOR:
+			case RexxLexer.AND:
+			case RexxLexer.CMPS_Eq:
+			case RexxLexer.CMPS_Neq:
+			case RexxLexer.CMPS_M:
+			case RexxLexer.CMPS_L:
+			case RexxLexer.CMPS_MEq:
+			case RexxLexer.CMPS_LEq:
+			case RexxLexer.CMPS_NM:
+			case RexxLexer.CMPS_NL:
+			case RexxLexer.CMP_NEq:
+			case RexxLexer.CMP_LM:
+			case RexxLexer.CMP_ML:
+			case RexxLexer.CMP_M:
+			case RexxLexer.CMP_L:
+			case RexxLexer.CMP_MEq:
+			case RexxLexer.CMP_LEq:
+			case RexxLexer.CMP_NM:
+			case RexxLexer.CMP_NL:
+			case RexxLexer.STOP:
+			case RexxLexer.QUESTION:
+			case RexxLexer.EXCLAMATION:
+				attrKey = OPERATION_SIGN;
+				break;
+			case RexxLexer.STMT_INCLUDE:
+				attrKey = INCLUDE;
+				break;
 			case RexxLexer.VAR_SYMBOL :
 				attrKey = VAR_SYMBOL;
 				break;
