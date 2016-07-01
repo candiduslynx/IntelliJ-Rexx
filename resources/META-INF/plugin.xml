@@ -5,12 +5,15 @@
   <vendor email="candiduslynx@gmail.com" url="https://github.com/candiduslynx">Alexander Shcherbakov</vendor>
 
   <description><![CDATA[
-      Plugin to support syntax checking and highlighting for Rexx language.
+      Plugin to support syntax checking and highlight for Rexx language.
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      <ol reversed>
+        <li>
+          0.0.1 - Syntax highlight.
+        </li>
+      </ol>
     ]]>
   </change-notes>
 
