@@ -28,7 +28,7 @@ public class RexxColorSettingsPage implements ColorSettingsPage {
 		new AttributesDescriptor("Colons and semicolons", RexxSyntaxHighlighter.COLONS),
 		new AttributesDescriptor("Comma", RexxSyntaxHighlighter.COMMA),
 		new AttributesDescriptor("Operation signs", RexxSyntaxHighlighter.OPERATION_SIGN),
-		new AttributesDescriptor("Parentheses statement", RexxSyntaxHighlighter.PARENTHESES),
+		new AttributesDescriptor("Parentheses", RexxSyntaxHighlighter.PARENTHESES),
 	};
 
 	@Nullable
