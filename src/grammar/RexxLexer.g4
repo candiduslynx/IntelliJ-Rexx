@@ -6,7 +6,8 @@ STMT_INCLUDE                    :   Comment_S Percent_sign_ KWD_INCLUDE Bo Var_S
 fragment KWD_INCLUDE            :   I N C L U D E ;
 
 // Skippable stuff
-COMMENT                         :   Comment_                -> channel(HIDDEN);
+BLOCK_COMMENT                   :   Comment_block_          -> channel(HIDDEN);
+LINE_COMMENT                    :   Comment_simple_         -> channel(HIDDEN);
 WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
 
 // Delimeter for expresstions
@@ -153,21 +154,23 @@ EXCLAMATION                     :   Exclamation_mark_ ;
 // --------------------------------------------------------
 // Fragments
 // Comments
-fragment Comment_               :   Comment_S Commentpart*? Comment_E ;
+// Line comment
+fragment Comment_simple_        :   Comment_S Commentpart_*? Comment_E ;
 fragment Comment_E              :   Asterisk_ Slash_ ;
 fragment Comment_S              :   Slash_ Asterisk_ ;
-fragment Commentpart            :   Comment_
-                                |   Commentpart_simple_+?
+fragment Commentpart_           :   Comment_simple_
+                                |   ( Slash_ | Asterisk_ | Comment_char_ )+?
                                 ;
-fragment Commentpart_simple_    :   Slash_
-                                |   Asterisk_
-                                |   Comment_char_
+fragment Comment_char_          :   ~[/*\n\r];
+// Block comment - spans for several lines
+fragment Comment_block_         :   Comment_S Commentpart_block_*? Comment_E ;
+fragment Commentpart_block_     :   Comment_block_
+                                |   Commentpart_
+                                |   ( Slash_ | Asterisk_ | Comment_char_ | Eol_)+?
                                 ;
-fragment Comment_char_          :   ~[/*];
-
 // Whitespaces
 fragment Whitespaces_           :   ( Blank | Continue_ )+ ;
-fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
+fragment Continue_              :   Comma_ ( Comment_simple_ | Blank )*? Eol_;
 
 // Delimeter
 fragment Delim_                 :   Scol_ EOL?
