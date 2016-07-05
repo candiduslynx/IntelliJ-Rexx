@@ -16,6 +16,8 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 	private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
 	public static final TextAttributesKey VAR_SYMBOL =
 		createTextAttributesKey("REXX_VAR_SYMBOL", DefaultLanguageHighlighterColors.IDENTIFIER);
+	public static final TextAttributesKey SPECIAL_VAR =
+		createTextAttributesKey("REXX_SPECIAL_VAR", DefaultLanguageHighlighterColors.PREDEFINED_SYMBOL);
 	public static final TextAttributesKey KEYWORD =
 		createTextAttributesKey("REXX_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
 	public static final TextAttributesKey STRING =
@@ -59,6 +61,9 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		int ttype = myType.getANTLRTokenType();
 		TextAttributesKey attrKey;
 		switch ( ttype ) {
+			case RexxLexer.SPECIAL_VAR:
+				attrKey = SPECIAL_VAR;
+				break;
 			case RexxLexer.CONST_SYMBOL:
 				attrKey = CONST;
 				break;

@@ -88,6 +88,11 @@ KWD_WITH                        :   W I T H ;
 BR_O                            :   Br_O_ ;
 BR_C                            :   Br_C_ ;
 
+// Special variables: RC, RESULT, SIGL
+SPECIAL_VAR                     :   R C
+                                |   R E S U L T
+                                |   S I G L
+                                ;
 // Label, const, var, number
 NUMBER                          :   Number_ ;
 CONST_SYMBOL                    :   Const_symbol_ ;
@@ -229,21 +234,7 @@ fragment Extra_letter           :   Hash_
                                 |   Dollar_
                                 ;
 // Const
-fragment Const_symbol_          :   Stop_ CONST_SYMBOL_RESERVED
-                                |   Digit_ Var_symbol_char*
-                                ;
-// Reserved constant symbols:  .MN, .RESULT, .RC, .RS, or .SIGL
-fragment CONST_SYMBOL_RESERVED  :   CONST_MN
-                                |   CONST_RESULT
-                                |   CONST_RC
-                                |   CONST_RS
-                                |   CONST_SIGL
-                                ;
-fragment CONST_MN               :   M N ;
-fragment CONST_RESULT           :   R E S U L T ;
-fragment CONST_RC               :   R C ;
-fragment CONST_RS               :   R S ;
-fragment CONST_SIGL             :   S I G L ;
+fragment Const_symbol_          :   Digit_ Var_symbol_char* ;
 fragment Digit_                 :   [0-9] ;
 // Number
 fragment Number_                :   Plain_number Exponent_? ;

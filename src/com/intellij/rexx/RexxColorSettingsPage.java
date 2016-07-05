@@ -13,6 +13,8 @@ import java.util.Map;
 
 public class RexxColorSettingsPage implements ColorSettingsPage {
 	private static final AttributesDescriptor[] DESCRIPTORS = new AttributesDescriptor[]{
+		new AttributesDescriptor("Special variables (RC, RESULT, SIGL)",
+			RexxSyntaxHighlighter.SPECIAL_VAR),
 		new AttributesDescriptor("Identifier", RexxSyntaxHighlighter.VAR_SYMBOL),
 		new AttributesDescriptor("Constant", RexxSyntaxHighlighter.CONST),
 		new AttributesDescriptor("Number", RexxSyntaxHighlighter.NUMBER),
@@ -67,13 +69,14 @@ public class RexxColorSettingsPage implements ColorSettingsPage {
 				"        i2 = strip(i2)\n" +
 				"        i3 = strip(i3)\n" +
 				"        if i3 = '' then\n" +
-				"            i3 = .SIGL\n" +
+				"            i3 = 1rt\n" +
 				"        while (i1 > i2) do\n" +
 				"            i1 = i1 + length(i3) + , /*<--continuation*/\n" +
 				"                    15\n" +
 				"            say i1\n" +
 				"        end\n" +
 				"    end\n" +
+				"    rc = 4\n" +
 				"return 0";
 	}
 
