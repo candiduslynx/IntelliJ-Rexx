@@ -107,7 +107,6 @@ call_                       :   KWD_CALL ( callon_spec | function_name call_parm
     callable_condition      :   KWD_ERROR
                             |   KWD_FAILURE
                             |   KWD_HALT
-                            |   KWD_NOTREADY
                             ;
   call_parms                :   BR_O expression_list? BR_C
                             |   expression_list
@@ -168,9 +167,10 @@ parse_                      :   KWD_PARSE KWD_UPPER? parse_type template_list? ;
                             |   parse_var
                             ;
     parse_key               :   KWD_ARG
+                            |   KWD_EXTERNAL
+                            |   KWD_NUMERIC
                             |   KWD_PULL
                             |   KWD_SOURCE
-                            |   KWD_LINEIN
                             |   KWD_VERSION
                             ;
     parse_value             :   KWD_VALUE expression? KWD_WITH ;
@@ -188,7 +188,6 @@ signal_                     :   KWD_SIGNAL ( signal_spec | valueexp | taken_cons
     condition               :   callable_condition
                             |   KWD_NOVALUE
                             |   KWD_SYNTAX
-                            |   KWD_LOSTDIGITS
                             ;
 trace_                      :   KWD_TRACE ( NUMBER | trace_options )? ;
   trace_options             :   prefix_option* trace_option

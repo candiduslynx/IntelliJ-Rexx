@@ -138,6 +138,7 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.KWD_ERROR:
 			case RexxLexer.KWD_EXIT:
 			case RexxLexer.KWD_EXPOSE:
+			case RexxLexer.KWD_EXTERNAL:
 			case RexxLexer.KWD_FAILURE:
 			case RexxLexer.KWD_FOR:
 			case RexxLexer.KWD_FOREVER:
@@ -152,11 +153,9 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.KWD_LABELS:
 			case RexxLexer.KWD_LEAVE:
 			case RexxLexer.KWD_LINEIN:
-			case RexxLexer.KWD_LOSTDIGITS:
 			case RexxLexer.KWD_NAME:
 			case RexxLexer.KWD_NOP:
 			case RexxLexer.KWD_NORMAL:
-			case RexxLexer.KWD_NOTREADY:
 			case RexxLexer.KWD_NOVALUE:
 			case RexxLexer.KWD_NUMERIC:
 			case RexxLexer.KWD_OFF:
