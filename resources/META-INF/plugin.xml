@@ -1,6 +1,6 @@
 <idea-plugin version="2">
   <id>com.intellij.rexx</id>
-  <name>Rexx language</name>
+  <name>TSO/E Rexx language</name>
   <version>0.0.1</version>
   <vendor email="candiduslynx@gmail.com" url="https://github.com/candiduslynx">Alexander Shcherbakov</vendor>
 
