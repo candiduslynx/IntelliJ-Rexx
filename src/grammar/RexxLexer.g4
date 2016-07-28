@@ -111,8 +111,8 @@ PLUS                            :   Plus_ ;
 MINUS                           :   Minus_ ;
 MUL                             :   Asterisk_ ;
 DIV                             :   Slash_ ;
-QUOTINENT                       :   Slash_ Slash_ ;
-REMAINDER                       :   Percent_sign_ ;
+QUOTINENT                       :   Percent_sign_ ;
+REMAINDER                       :   Slash_ Slash_ ;
 POW                             :   Asterisk_ Asterisk_ ;
 // Logical: NOT, OR, AND, XOR
 // Note: '\\' also used for prefix expressions
