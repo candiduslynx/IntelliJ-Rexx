@@ -28,6 +28,9 @@
     <fileTypeFactory implementation="com.intellij.rexx.RexxFileTypeFactory"/>
     <lang.syntaxHighlighterFactory key="Rexx" implementationClass="com.intellij.rexx.RexxSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="com.intellij.rexx.RexxColorSettingsPage"/>
+
+    <lang.parserDefinition language="Rexx" implementationClass="com.intellij.rexx.RexxParserDefinition"/>
+    <lang.psiStructureViewFactory language="Rexx" implementationClass="com.intellij.rexx.structview.RexxStructureViewFactory"/>
   </extensions>
 
   <actions>
