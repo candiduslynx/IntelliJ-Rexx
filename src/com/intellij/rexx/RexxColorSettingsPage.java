@@ -60,23 +60,22 @@ public class RexxColorSettingsPage implements ColorSettingsPage {
 				"/* %include somemod */\n" +
 				"\n" +
 				"mainpgm:\n" +
-				"    parse upper arg input, setting ;\n" +
-				"    if length(input) > 12 then\n" +
-				"        say \"too long: <\" || input || '> is longer than 12 characters!'\n" +
-				"    else do\n" +
-				"        parse var input i1 i2 i3\n" +
-				"        i1 = strip(i1)\n" +
-				"        i2 = strip(i2)\n" +
-				"        i3 = strip(i3)\n" +
-				"        if i3 = '' then\n" +
-				"            i3 = 1rt\n" +
-				"        while (i1 > i2) do\n" +
-				"            i1 = i1 + length(i3) + , /*<--continuation*/\n" +
-				"                    15\n" +
-				"            say i1\n" +
-				"        end\n" +
+				"  parse upper arg input_, setting ;\n" +
+				"  if length(input_) > 12 then\n" +
+				"    say \"too long: <\" || input_ || '> is longer than 12 characters!'\n" +
+				"  else do\n" +
+				"    parse var input_ i1 i2 i3\n" +
+				"    i1 = strip(i1)\n" +
+				"    i2 = strip(i2)\n" +
+				"    i3 = strip(i3)\n" +
+				"    if i3 = '' then\n" +
+				"      i3 = SIGL\n" +
+				"    do while (i1 > i2)\n" +
+				"      i1 = i1 + length(i3) + , /*<--continuation*/\n" +
+				"                 15\n" +
+				"      say i1\n" +
 				"    end\n" +
-				"    rc = 4\n" +
+				"  end\n" +
 				"return 0";
 	}
 

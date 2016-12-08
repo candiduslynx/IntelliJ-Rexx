@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.intellij.rexx</id>
   <name>TSO/E Rexx language</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <vendor email="candiduslynx@gmail.com" url="https://github.com/candiduslynx">Alexander Shcherbakov</vendor>
 
   <description><![CDATA[
@@ -10,6 +10,9 @@
 
   <change-notes><![CDATA[
       <ol reversed>
+        <li>
+          0.0.2 - More precise IF statement parssing - intact with IBM TSO/E Rexx implementation.
+        </li>
         <li>
           0.0.1 - Syntax highlight.
         </li>

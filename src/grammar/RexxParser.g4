@@ -53,7 +53,7 @@ group_                      :   do_
                             ;
   do_                       :   do_specification ncl? instruction_list? do_ending ;
     do_ending               :   KWD_END var_symbol? ncl? ;
-  if_                       :   KWD_IF expression ncl? then_ else_? ;
+  if_                       :   KWD_IF expression ncl? then_ (ncl else_)? ;
     then_                   :   KWD_THEN ncl? instruction ;
     else_                   :   KWD_ELSE ncl? instruction ;
   select_                   :   KWD_SELECT ncl? select_body KWD_END ncl? ;
