@@ -275,7 +275,7 @@ fragment Operator_only          :   Plus_
                                 |   More_
                                 |   Less_
                                 ;
-fragment Other_character        :   ~[\"\'\n\r\*/] ;
+fragment Other_character        :   ~["'\n\r*/] ;
 fragment Not_                   :   Backslash_
                                 |   Other_negator
                                 ;
