@@ -2,15 +2,11 @@ lexer grammar RexxLexer;
 
 // Main rules
 // %INCLUDE statement
-STMT_INCLUDE                    :   Slash_ Asterisk_ Bo?
-                                    Percent_sign_ KWD_INCLUDE Bo Var_Symbol_+
-                                    Bo? Asterisk_ Slash_ ;
+STMT_INCLUDE                    :   Comment_S Bo? Percent_sign_ KWD_INCLUDE Bo Var_Symbol_+ Bo? Comment_E ;
 fragment KWD_INCLUDE            :   I N C L U D E ;
 
 // Skippable stuff
-COMMENT                         :   Slash_ Asterisk_
-                                    ->  pushMode(Comment) ,
-                                        channel(HIDDEN) ;
+COMMENT                         :   Comment_                -> channel(HIDDEN);
 WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
 CONTINUATION                    :   Continue_               -> channel(HIDDEN);
 // Delimeter for expresstions
@@ -160,9 +156,21 @@ EXCLAMATION                     :   Exclamation_mark_ ;
 
 // --------------------------------------------------------
 // Fragments
+// Comments
+fragment Comment_               :   Comment_S Commentpart*? Comment_E ;
+fragment Comment_E              :   Asterisk_ Slash_ ;
+fragment Comment_S              :   Slash_ Asterisk_ ;
+fragment Commentpart            :   Comment_
+                                |   Commentpart_simple_+?
+                                ;
+fragment Commentpart_simple_    :   Slash_
+                                |   Asterisk_
+                                |   Comment_char_
+                                ;
+fragment Comment_char_          :   ~[/*];
 // Whitespaces
 fragment Whitespaces_           :   Blank+ ;
-fragment Continue_              :   Comma_ ( COMMENT | Blank )*? Eol_;
+fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
 // Delimeter
 fragment Delim_                 :   Scol_ EOL?
                                 |   EOL
@@ -234,15 +242,7 @@ fragment Plain_number           :   Digit_+ Stop_? Digit_*
                                 ;
 fragment Exponent_              :   E ( Plus_ | Minus_ )? Digit_+ ;
 // String and concatenation
-fragment String_                :   Extended_String_
-                                |   Simple_String_
-                                ;
-fragment Extended_String_       :   Hex_String
-                                |   Bin_String
-                                ;
-fragment Hex_String             :   Quoted_string X ;
-fragment Bin_String             :   Quoted_string B ;
-fragment Simple_String_         :   Quoted_string ;
+fragment String_                :   Quoted_string ;
 fragment Quoted_string          :   Quotation_mark_string
                                 |   Apostrophe_string
                                 ;
@@ -348,13 +348,3 @@ fragment Y                      :   ('y'|'Y');
 fragment Z                      :   ('z'|'Z');
 
 UNSUPPORTED_CHARACTER           :   . ;
-
-// COMMENT mode
-mode Comment;
-Comment_S                       :   '/*'
-                                ->  pushMode(Comment) ,
-                                    channel(HIDDEN) ;
-Comment_E                       :   '*/'
-                                ->  popMode ,
-                                    channel(HIDDEN) ;
-AnyChar                         :   .   -> channel(HIDDEN) ;
