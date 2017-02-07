@@ -11,7 +11,10 @@
   <change-notes><![CDATA[
       <ol reversed>
         <li>
-          0.0.2 - More precise IF statement parssing - intact with IBM TSO/E Rexx implementation.
+          0.0.3 - Comments enhancements.
+        </li>
+        <li>
+          0.0.2 - More precise IF statement parsing - intact with IBM TSO/E Rexx implementation.
         </li>
         <li>
           0.0.1 - Syntax highlight.
