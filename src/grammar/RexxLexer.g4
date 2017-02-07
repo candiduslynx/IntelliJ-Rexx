@@ -157,17 +157,15 @@ EXCLAMATION                     :   Exclamation_mark_ ;
 // --------------------------------------------------------
 // Fragments
 // Comments
-fragment Comment_               :   Comment_S Commentpart*? Comment_E ;
+fragment Comment_               :   Comment_S
+                                    Commentpart*? Asterisk_*?
+                                    (Comment_E | EOF) ;
 fragment Comment_E              :   Asterisk_ Slash_ ;
 fragment Comment_S              :   Slash_ Asterisk_ ;
 fragment Commentpart            :   Comment_
-                                |   Commentpart_simple_+?
+                                |   Slash_* ~[/*]+
+                                |   Asterisk_* ~[/*]+
                                 ;
-fragment Commentpart_simple_    :   Slash_
-                                |   Asterisk_
-                                |   Comment_char_
-                                ;
-fragment Comment_char_          :   ~[/*];
 // Whitespaces
 fragment Whitespaces_           :   Blank+ ;
 fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
