@@ -44,7 +44,8 @@ public class RexxParserDefinition implements ParserDefinition {
 	public static final TokenSet COMMENTS =
 		PSIElementTypeFactory.createTokenSet(
 			RexxLanguage.INSTANCE,
-			RexxLexer.COMMENT,
+			RexxLexer.LINE_COMMENT,
+			RexxLexer.BLOCK_COMMENT,
 			RexxLexer.CONTINUATION);
 
 	public static final TokenSet WHITESPACE =

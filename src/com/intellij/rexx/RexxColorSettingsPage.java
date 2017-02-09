@@ -23,7 +23,10 @@ public class RexxColorSettingsPage implements ColorSettingsPage {
 
 		new AttributesDescriptor("String", RexxSyntaxHighlighter.STRING),
 
-		new AttributesDescriptor("Comment", RexxSyntaxHighlighter.COMMENT),
+		new AttributesDescriptor("Line comment",
+			RexxSyntaxHighlighter.LINE_COMMENT),
+		new AttributesDescriptor("Block comment",
+			RexxSyntaxHighlighter.BLOCK_COMMENT),
 
 		new AttributesDescriptor("Include statement", RexxSyntaxHighlighter.INCLUDE),
 

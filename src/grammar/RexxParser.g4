@@ -5,11 +5,14 @@ file                        :   program_ EOF ;
 
 program_                    :   ncl? instruction_list? ;
   ncl                       :   null_clause+ ;
-    null_clause             :   DELIM+ label_list?
+    null_clause             :   delim+ label_list?
                             |   label_list
                             |   include_statement
                             ;
-      label_list            :   ( label COLON DELIM* )+ ;
+      delim                 :   SEMICOL
+                            |   EOL
+                            ;
+      label_list            :   ( label COLON delim* )+ ;
         label               :   symbol ;
       include_statement     :   STMT_INCLUDE ;
   instruction_list          :   instruction+ ;

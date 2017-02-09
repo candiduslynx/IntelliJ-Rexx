@@ -8,8 +8,8 @@ import com.intellij.psi.tree.IElementType;
 import org.antlr.jetbrains.adaptor.lexer.ANTLRLexerAdaptor;
 import org.antlr.jetbrains.adaptor.lexer.PSIElementTypeFactory;
 import org.antlr.jetbrains.adaptor.lexer.TokenIElementType;
-
 import org.jetbrains.annotations.NotNull;
+
 import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;
 
 public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
@@ -22,8 +22,12 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		createTextAttributesKey("REXX_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
 	public static final TextAttributesKey STRING =
 		createTextAttributesKey("REXX_STRING", DefaultLanguageHighlighterColors.STRING);
-	public static final TextAttributesKey COMMENT =
-		createTextAttributesKey("REXX_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
+	public static final TextAttributesKey LINE_COMMENT =
+		createTextAttributesKey("REXX_LINE_COMMENT",
+			DefaultLanguageHighlighterColors.LINE_COMMENT);
+	public static final TextAttributesKey BLOCK_COMMENT =
+		createTextAttributesKey("REXX_BLOCK_COMMENT",
+			DefaultLanguageHighlighterColors.BLOCK_COMMENT);
 	public static final TextAttributesKey INCLUDE =
 		createTextAttributesKey("REXX_INCLUDE", DefaultLanguageHighlighterColors.METADATA);
 
@@ -56,11 +60,11 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 	@NotNull
 	@Override
 	public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
-		if ( !(tokenType instanceof TokenIElementType) ) return EMPTY_KEYS;
-		TokenIElementType myType = (TokenIElementType)tokenType;
+		if (!(tokenType instanceof TokenIElementType)) return EMPTY_KEYS;
+		TokenIElementType myType = (TokenIElementType) tokenType;
 		int ttype = myType.getANTLRTokenType();
 		TextAttributesKey attrKey;
-		switch ( ttype ) {
+		switch (ttype) {
 			case RexxLexer.SPECIAL_VAR:
 				attrKey = SPECIAL_VAR;
 				break;
@@ -72,12 +76,12 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 				break;
 			case RexxLexer.BR_O:
 			case RexxLexer.BR_C:
-				attrKey	= PARENTHESES;
+				attrKey = PARENTHESES;
 				break;
 			case RexxLexer.COMMA:
 				attrKey = COMMA;
 				break;
-			case RexxLexer.DELIM:
+			case RexxLexer.SEMICOL:
 			case RexxLexer.COLON:
 				attrKey = COLONS;
 				break;
@@ -119,7 +123,7 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.STMT_INCLUDE:
 				attrKey = INCLUDE;
 				break;
-			case RexxLexer.VAR_SYMBOL :
+			case RexxLexer.VAR_SYMBOL:
 				attrKey = VAR_SYMBOL;
 				break;
 			case RexxLexer.KWD_ADDRESS:
@@ -193,16 +197,19 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.KWD_WITH:
 				attrKey = KEYWORD;
 				break;
-			case RexxLexer.STRING :
+			case RexxLexer.STRING:
 				attrKey = STRING;
 				break;
-			case RexxLexer.COMMENT :
+			case RexxLexer.LINE_COMMENT:
 			case RexxLexer.CONTINUATION:
-				attrKey = COMMENT;
+				attrKey = LINE_COMMENT;
 				break;
-			default :
+			case RexxLexer.BLOCK_COMMENT:
+				attrKey = BLOCK_COMMENT;
+				break;
+			default:
 				return EMPTY_KEYS;
 		}
-		return new TextAttributesKey[] {attrKey};
+		return new TextAttributesKey[]{attrKey};
 	}
 }

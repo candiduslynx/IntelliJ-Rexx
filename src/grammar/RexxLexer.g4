@@ -2,15 +2,14 @@ lexer grammar RexxLexer;
 
 // Main rules
 // %INCLUDE statement
-STMT_INCLUDE                    :   Comment_S Bo? Percent_sign_ KWD_INCLUDE Bo Var_Symbol_+ Bo? Comment_E ;
-fragment KWD_INCLUDE            :   I N C L U D E ;
-
+STMT_INCLUDE                    :   Include_Statement ;
 // Skippable stuff
-COMMENT                         :   Comment_                -> channel(HIDDEN);
+LINE_COMMENT                    :   Line_Comment_
+                                ->  channel(HIDDEN);
+BLOCK_COMMENT                   :   Block_Comment_
+                                ->  channel(HIDDEN);
 WHISPACES                       :   Whitespaces_            -> channel(HIDDEN);
 CONTINUATION                    :   Continue_               -> channel(HIDDEN);
-// Delimeter for expresstions
-DELIM                           :   Delim_ ;
 
 // Keywords
 KWD_ADDRESS                     :   A D D R E S S ;
@@ -100,7 +99,8 @@ VAR_SYMBOL                      :   Var_Symbol_ ;
 // String and concatenation
 STRING                          :   String_ ;
 CONCAT                          :   Blank
-                                |   VBar_ VBar_ ;
+                                |   VBar_ VBar_
+                                ;
 
 // Operations
 // Assignment (also comparison and template operator)
@@ -148,34 +148,53 @@ STOP                            :   Stop_ ;
 // ,
 COMMA                           :   Comma_ ;
 // :
-COLON                           :   Colon_  ;
+COLON                           :   Colon_ ;
 // ?
 QUESTION                        :   Question_mark_ ;
 // !
 EXCLAMATION                     :   Exclamation_mark_ ;
-
+// End of line
+EOL                             :   Eol_ ;
+// Semicolumn
+SEMICOL                         :   Scol_ ;
 // --------------------------------------------------------
 // Fragments
 // Comments
-fragment Comment_               :   Comment_S
-                                    Commentpart*? Asterisk_*?
-                                    ( Comment_E | EOF ) ;
-fragment Comment_E              :   Asterisk_ Slash_ ;
-fragment Comment_S              :   Slash_ Asterisk_ ;
-fragment Commentpart            :   Comment_
-                                |   Slash_ Comment_
+// Include statement - need to account for this
+fragment Include_Statement      :   Comment_S Bo?
+                                    Percent_sign_ I N C L U D E
+                                    Bo Var_Symbol_+ Bo?
+                                    Comment_E
+                                ;
+// Line comment - no EOL allowed inside.
+fragment Line_Comment_          :   Comment_S
+                                    Line_Commentpart*?
+                                    Asterisk_*?
+                                    ( Comment_E | EOF )
+                                ;
+fragment Line_Commentpart       :   Line_Comment_
+                                |   Slash_ Line_Comment_
+                                |   Slash_ ~[*\n\r]+?
+                                |   Asterisk_ ~[/\n\r]+?
+                                |   ~[/*\n\r]+
+                                ;
+fragment Block_Comment_         :   Comment_S
+                                    Block_Commentpart*?
+                                    Asterisk_*?
+                                    ( Comment_E | EOF )
+                                ;
+fragment Block_Commentpart      :   Block_Comment_
+                                |   Slash_ Block_Comment_
                                 |   Slash_ ~[*]+?
                                 |   Asterisk_ ~[/]+?
                                 |   ~[/*]+
                                 ;
+fragment Comment_E              :   Asterisk_ Slash_ ;
+fragment Comment_S              :   Slash_ Asterisk_ ;
 // Whitespaces
 fragment Whitespaces_           :   Blank+ ;
-fragment Continue_              :   Comma_ ( Comment_ | Blank )*? Eol_;
-// Delimeter
-fragment Delim_                 :   Scol_ EOL?
-                                |   EOL
-                                ;
-fragment EOL                    :   Eol_+ ;
+// Continuation - only line comments allowed till EOL
+fragment Continue_              :   Comma_ ( Line_Comment_ | Blank )*? Eol_;
 fragment Eol_                   :   New_Line_ Caret_Return_
                                 |   Caret_Return_ New_Line_
                                 |   New_Line_
@@ -347,4 +366,5 @@ fragment X                      :   ('x'|'X');
 fragment Y                      :   ('y'|'Y');
 fragment Z                      :   ('z'|'Z');
 
+// Unsupported characters
 UNSUPPORTED_CHARACTER           :   . ;
