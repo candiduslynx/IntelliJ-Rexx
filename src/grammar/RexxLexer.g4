@@ -193,8 +193,10 @@ fragment Comment_E              :   Asterisk_ Slash_ ;
 fragment Comment_S              :   Slash_ Asterisk_ ;
 // Whitespaces
 fragment Whitespaces_           :   Blank+ ;
-// Continuation - only line comments allowed till EOL
-fragment Continue_              :   Comma_ ( Line_Comment_ | Blank )*? Eol_;
+// Continuation - full comments, but no EOL between
+fragment Continue_              :   Comma_
+                                    ( Block_Comment_ | Line_Comment_ | Blank )*?
+                                    Eol_;
 fragment Eol_                   :   New_Line_ Caret_Return_
                                 |   Caret_Return_ New_Line_
                                 |   New_Line_
