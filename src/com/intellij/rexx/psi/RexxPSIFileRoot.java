@@ -28,7 +28,7 @@ public class RexxPSIFileRoot extends PsiFileBase implements ScopeNode {
 
 	@Override
 	public String toString() {
-		return "Sample Language file";
+		return "Rexx Language file";
 	}
 
 	@Override
