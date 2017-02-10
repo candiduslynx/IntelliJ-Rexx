@@ -114,7 +114,8 @@ call_                       :   KWD_CALL ( callon_spec | function_name call_parm
   call_parms                :   BR_O expression_list? BR_C
                             |   expression_list
                             ;
-  expression_list           :   COMMA* expr ( COMMA+ expr )* ;
+  expression_list           :   COMMA* expression
+                                ( COMMA+ expression )* ;
 do_specification            :   do_repetitive
                             |   do_simple
                             ;
@@ -123,15 +124,12 @@ do_specification            :   do_repetitive
                             |   KWD_DO docond
                             |   KWD_DO dorep docond?
                             ;
-  docond                    :   KWD_WHILE whileexpr
-                            |   KWD_UNTIL untilexpr
+  docond                    :   KWD_WHILE expression
+                            |   KWD_UNTIL expression
                             ;
-    untilexpr               :   expression ;
-    whileexpr               :   expression ;
   dorep                     :   assignment docount?
-                            |   repexpr
+                            |   expression
                             ;
-    repexpr                 :   expression ;
     docount                 :   dot dobf?
                             |   dob dotf?
                             |   dof dotb?
@@ -145,12 +143,9 @@ do_specification            :   do_repetitive
       dotb                  :   dot dob?
                             |   dob dot?
                             ;
-      dot                   :   KWD_TO toexpr ;
-        toexpr              :   expression ;
-      dob                   :   KWD_BY byexpr ;
-        byexpr              :   expression ;
-      dof                   :   KWD_FOR forexpr ;
-        forexpr             :   expression ;
+      dot                   :   KWD_TO expression ;
+      dob                   :   KWD_BY expression ;
+      dof                   :   KWD_FOR expression ;
 drop_                       :   KWD_DROP variable_list ;
   variable_list             :   ( vref | var_symbol )+ ;
     vref                    :   BR_O var_symbol BR_C ;
@@ -241,12 +236,12 @@ symbol                      :   var_symbol
                             |   CONST_SYMBOL
                             |   NUMBER
                             ;
-expression                  :   expr ;
-  expr                      :   and_expression ( or_operator and_expression )* ;
-      or_operator           :   OR
+expression                  :   and_expression
+                                ( or_operator and_expression )* ;
+  or_operator               :   OR
                             |   XOR
                             ;
-      and_expression        :   comparison ( AND comparison )* ;
+  and_expression            :   comparison ( AND comparison )* ;
 comparison                  :   concatenation ( comparison_operator concatenation )* ;
   comparison_operator       :   normal_compare
                             |   strict_compare
@@ -285,7 +280,7 @@ multiplication              :   power_expression ( multiplicative_operator power
 power_expression            :   prefix_expression ( POW prefix_expression )* ;
   prefix_expression         :   ( PLUS | MINUS | NOT )* term ;
     term                    :   function_
-                            |   BR_O expr  BR_C
+                            |   BR_O expression  BR_C
                             |   symbol
                             |   STRING
                             ;
