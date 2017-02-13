@@ -22,3 +22,4 @@ mainpgm:
 return 0
 /*hello beautiful
 */
+test = "of" "concat"
