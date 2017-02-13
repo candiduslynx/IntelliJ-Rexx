@@ -97,7 +97,10 @@ CONST_SYMBOL                    :   Const_symbol_ ;
 VAR_SYMBOL                      :   Var_Symbol_ ;
 
 // String and concatenation
-STRING                          :   String_ ;
+STRING                          :   String_
+                                |   Hex_String
+                                |   Bin_String
+                                ;
 CONCAT                          :   Blank
                                 |   VBar_ VBar_
                                 ;
@@ -264,6 +267,8 @@ fragment Plain_number           :   Digit_+ Stop_? Digit_*
 fragment Exponent_              :   E ( Plus_ | Minus_ )? Digit_+ ;
 // String and concatenation
 fragment String_                :   Quoted_string ;
+fragment Hex_String             :   Quoted_string X ;
+fragment Bin_String             :   Quoted_string B ;
 fragment Quoted_string          :   Quotation_mark_string
                                 |   Apostrophe_string
                                 ;
