@@ -97,10 +97,7 @@ CONST_SYMBOL                    :   Const_symbol_ ;
 VAR_SYMBOL                      :   Var_Symbol_ ;
 
 // String and concatenation
-STRING                          :   String_
-                                |   Hex_String
-                                |   Bin_String
-                                ;
+STRING                          :   String_ ;
 // In concatenation don't need the blanks - will be precoeesed by WHITESPACES
 CONCAT                          :   VBar_ VBar_ ;
 
@@ -266,11 +263,6 @@ fragment Plain_number           :   Digit_+ Stop_? Digit_*
 fragment Exponent_              :   E ( Plus_ | Minus_ )? Digit_+ ;
 // String and concatenation
 fragment String_                :   Quoted_string ;
-//TODO: update hex and bin strings, so that ony some characters are supported
-//TODO: Hex_String: 0-9, A-F, a-f
-//TODO: Bin_String: 0-1
-fragment Hex_String             :   Quoted_string X ;
-fragment Bin_String             :   Quoted_string B ;
 fragment Quoted_string          :   Quotation_mark_string
                                 |   Apostrophe_string
                                 ;

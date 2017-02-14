@@ -23,3 +23,4 @@ return 0
 /*hello beautiful
 */
 test = "of" "concat"
+this = '00'x
