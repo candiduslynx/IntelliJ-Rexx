@@ -68,16 +68,6 @@ public interface RexxParserListener extends ParseTreeListener {
 	 */
 	void exitLabel_list(RexxParser.Label_listContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RexxParser#label}.
-	 * @param ctx the parse tree
-	 */
-	void enterLabel(RexxParser.LabelContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#label}.
-	 * @param ctx the parse tree
-	 */
-	void exitLabel(RexxParser.LabelContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link RexxParser#include_statement}.
 	 * @param ctx the parse tree
 	 */
@@ -127,16 +117,6 @@ public interface RexxParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssignment(RexxParser.AssignmentContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#var_symbol}.
-	 * @param ctx the parse tree
-	 */
-	void enterVar_symbol(RexxParser.Var_symbolContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#var_symbol}.
-	 * @param ctx the parse tree
-	 */
-	void exitVar_symbol(RexxParser.Var_symbolContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RexxParser#keyword_instruction}.
 	 * @param ctx the parse tree
@@ -597,6 +577,16 @@ public interface RexxParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVref(RexxParser.VrefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#var_symbol}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar_symbol(RexxParser.Var_symbolContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#var_symbol}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar_symbol(RexxParser.Var_symbolContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RexxParser#exit_}.
 	 * @param ctx the parse tree

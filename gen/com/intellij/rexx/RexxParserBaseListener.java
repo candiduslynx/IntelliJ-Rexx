@@ -88,18 +88,6 @@ public class RexxParserBaseListener implements RexxParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLabel(RexxParser.LabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLabel(RexxParser.LabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterInclude_statement(RexxParser.Include_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -155,18 +143,6 @@ public class RexxParserBaseListener implements RexxParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAssignment(RexxParser.AssignmentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVar_symbol(RexxParser.Var_symbolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVar_symbol(RexxParser.Var_symbolContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -719,6 +695,18 @@ public class RexxParserBaseListener implements RexxParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVref(RexxParser.VrefContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVar_symbol(RexxParser.Var_symbolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVar_symbol(RexxParser.Var_symbolContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -12,8 +12,7 @@ program_                    :   ncl? instruction_list? ;
       delim                 :   SEMICOL
                             |   EOL
                             ;
-      label_list            :   ( label COLON delim* )+ ;
-        label               :   symbol ;
+      label_list            :   ( VAR_SYMBOL COLON delim* )+ ;
       include_statement     :   STMT_INCLUDE ;
   instruction_list          :   instruction+ ;
     instruction             :   group_
@@ -23,10 +22,7 @@ single_instruction          :   assignment
                             |   keyword_instruction
                             |   command_
                             ;
-  assignment                :   var_symbol EQ expression ;
-    var_symbol              :   VAR_SYMBOL
-                            |   SPECIAL_VAR
-                            ;
+  assignment                :   ( VAR_SYMBOL | SPECIAL_VAR ) EQ expression ;
   keyword_instruction       :   address_
                             |   arg_
                             |   call_
@@ -149,6 +145,9 @@ do_specification            :   do_repetitive
 drop_                       :   KWD_DROP variable_list ;
   variable_list             :   ( vref | var_symbol )+ ;
     vref                    :   BR_O var_symbol BR_C ;
+    var_symbol              :   VAR_SYMBOL
+                            |   SPECIAL_VAR
+                            ;
 exit_                       :   KWD_EXIT expression? ;
 interpret_                  :   KWD_INTERPRET expression ;
 iterate_                    :   KWD_ITERATE var_symbol? ;
@@ -209,9 +208,9 @@ upper_                      :   KWD_UPPER var_symbol+ ; // if stem -> signal of 
 
 /* Note: The next section describes templates. */
 template_list               :   COMMA* template_ ( COMMA+ template_ )* ;
-//  template_                 :   ( trigger_ | target_ )+? ;
   template_                 :   ( trigger_ | target_ )+ ;
-    target_                 :   var_symbol
+    target_                 :   VAR_SYMBOL
+                            |   SPECIAL_VAR
                             |   STOP
                             ;
     trigger_                :   pattern_
