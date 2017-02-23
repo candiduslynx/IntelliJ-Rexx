@@ -68,6 +68,16 @@ public interface RexxParserListener extends ParseTreeListener {
 	 */
 	void exitLabel_list(RexxParser.Label_listContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RexxParser#label}.
+	 * @param ctx the parse tree
+	 */
+	void enterLabel(RexxParser.LabelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#label}.
+	 * @param ctx the parse tree
+	 */
+	void exitLabel(RexxParser.LabelContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RexxParser#include_statement}.
 	 * @param ctx the parse tree
 	 */

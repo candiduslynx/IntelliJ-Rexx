@@ -12,7 +12,11 @@ program_                    :   ncl? instruction_list? ;
       delim                 :   SEMICOL
                             |   EOL
                             ;
-      label_list            :   ( VAR_SYMBOL COLON delim* )+ ;
+      label_list            :   ( label COLON delim* )+ ;
+        label               :   VAR_SYMBOL
+                            |   CONST_SYMBOL
+                            |   NUMBER
+                            ;
       include_statement     :   STMT_INCLUDE ;
   instruction_list          :   instruction+ ;
     instruction             :   group_
