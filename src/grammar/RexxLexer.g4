@@ -97,7 +97,26 @@ CONST_SYMBOL                    :   Const_symbol_ ;
 VAR_SYMBOL                      :   Var_Symbol_ ;
 
 // String and concatenation
-STRING                          :   String_ ;
+STRING                          :   String_
+// Additionally, need to consume X or B at the end not followed by
+// _!?A-Za-z.#@$0-9
+{int currPos = this.getCharIndex();
+int textLen = super.getInputStream().size();
+if (textLen > currPos) {
+    if (textLen == currPos + 1) {
+        if (super.getInputStream()
+            .getText(
+                new Interval(currPos, currPos))
+            .matches("[XxBb]"))
+            super.getInputStream().consume();
+    } else {
+        if (super.getInputStream().getText(
+            new Interval(currPos, currPos + 1))
+            .matches("[XxBb][^_!?A-Za-z.#@$0-9]"))
+            super.getInputStream().consume();
+    }
+}}
+                                ;
 // In concatenation don't need the blanks - will be precoeesed by WHITESPACES
 CONCAT                          :   VBar_ VBar_ ;
 

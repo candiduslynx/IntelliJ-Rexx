@@ -23,8 +23,5 @@ return 0
 /*hello beautiful
 */
 test = "of" "concat"
-this = '00'x
-
-
-
-har: zx
+this = '00'x||asas
+'0'x
