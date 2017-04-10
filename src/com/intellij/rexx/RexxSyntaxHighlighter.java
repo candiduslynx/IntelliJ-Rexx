@@ -35,6 +35,8 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 		createTextAttributesKey("REXX_COLONS", DefaultLanguageHighlighterColors.SEMICOLON);
 	public static final TextAttributesKey OPERATION_SIGN =
 		createTextAttributesKey("REXX_OPERATION_SIGN", DefaultLanguageHighlighterColors.OPERATION_SIGN);
+	public static final TextAttributesKey DOT =
+		createTextAttributesKey("REXX_DOT", DefaultLanguageHighlighterColors.DOT);
 	public static final TextAttributesKey COMMA =
 		createTextAttributesKey("REXX_COMMA", DefaultLanguageHighlighterColors.COMMA);
 	public static final TextAttributesKey PARENTHESES =
@@ -85,6 +87,9 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.COLON:
 				attrKey = COLONS;
 				break;
+			case RexxLexer.STOP:
+				attrKey = DOT;
+				break;
 			case RexxLexer.CONCAT:
 			case RexxLexer.EQ:
 			case RexxLexer.PLUS:
@@ -115,7 +120,6 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.CMP_LEq:
 			case RexxLexer.CMP_NM:
 			case RexxLexer.CMP_NL:
-			case RexxLexer.STOP:
 			case RexxLexer.QUESTION:
 			case RexxLexer.EXCLAMATION:
 				attrKey = OPERATION_SIGN;

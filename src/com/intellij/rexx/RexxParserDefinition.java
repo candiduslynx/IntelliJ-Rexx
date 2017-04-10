@@ -30,7 +30,8 @@ public class RexxParserDefinition implements ParserDefinition {
 	public static final IFileElementType FILE =
 		new IFileElementType(RexxLanguage.INSTANCE);
 
-	public static TokenIElementType ID;
+	public static TokenIElementType VAR_SYMBOL;
+	public static TokenIElementType STRING_Token;
 
 	static {
 		PSIElementTypeFactory.defineLanguageIElementTypes(RexxLanguage.INSTANCE,
@@ -38,7 +39,8 @@ public class RexxParserDefinition implements ParserDefinition {
 			RexxParser.ruleNames);
 		List<TokenIElementType> tokenIElementTypes =
 			PSIElementTypeFactory.getTokenIElementTypes(RexxLanguage.INSTANCE);
-		ID = tokenIElementTypes.get(RexxLexer.VAR_SYMBOL);
+		VAR_SYMBOL = tokenIElementTypes.get(RexxLexer.VAR_SYMBOL);
+		STRING_Token = tokenIElementTypes.get(RexxLexer.STRING);
 	}
 
 	public static final TokenSet COMMENTS =
@@ -58,6 +60,80 @@ public class RexxParserDefinition implements ParserDefinition {
 			RexxLanguage.INSTANCE,
 			RexxLexer.STRING);
 
+	public static final TokenSet KEYWORDS =
+		PSIElementTypeFactory.createTokenSet(
+			RexxLanguage.INSTANCE,
+			RexxLexer.KWD_ADDRESS,
+			RexxLexer.KWD_ALL,
+			RexxLexer.KWD_APPEND,
+			RexxLexer.KWD_ARG,
+			RexxLexer.KWD_BY,
+			RexxLexer.KWD_CALL,
+			RexxLexer.KWD_COMMANDS,
+			RexxLexer.KWD_DIGITS,
+			RexxLexer.KWD_DO,
+			RexxLexer.KWD_DROP,
+			RexxLexer.KWD_ELSE,
+			RexxLexer.KWD_END,
+			RexxLexer.KWD_ENGINEERING,
+			RexxLexer.KWD_ERROR,
+			RexxLexer.KWD_EXIT,
+			RexxLexer.KWD_EXPOSE,
+			RexxLexer.KWD_EXTERNAL,
+			RexxLexer.KWD_FAILURE,
+			RexxLexer.KWD_FOR,
+			RexxLexer.KWD_FOREVER,
+			RexxLexer.KWD_FORM,
+			RexxLexer.KWD_FUZZ,
+			RexxLexer.KWD_HALT,
+			RexxLexer.KWD_IF,
+			RexxLexer.KWD_INPUT,
+			RexxLexer.KWD_INTERMEDIATES,
+			RexxLexer.KWD_INTERPRET,
+			RexxLexer.KWD_ITERATE,
+			RexxLexer.KWD_LABELS,
+			RexxLexer.KWD_LEAVE,
+			RexxLexer.KWD_LINEIN,
+			RexxLexer.KWD_NAME,
+			RexxLexer.KWD_NOP,
+			RexxLexer.KWD_NORMAL,
+			RexxLexer.KWD_NOVALUE,
+			RexxLexer.KWD_NUMERIC,
+			RexxLexer.KWD_OFF,
+			RexxLexer.KWD_ON,
+			RexxLexer.KWD_OPTIONS,
+			RexxLexer.KWD_OTHERWISE,
+			RexxLexer.KWD_OUTPUT,
+			RexxLexer.KWD_PARSE,
+			RexxLexer.KWD_PROCEDURE,
+			RexxLexer.KWD_PULL,
+			RexxLexer.KWD_PUSH,
+			RexxLexer.KWD_QUEUE,
+			RexxLexer.KWD_REPLACE,
+			RexxLexer.KWD_RESULTS,
+			RexxLexer.KWD_RETURN,
+			RexxLexer.KWD_SAY,
+			RexxLexer.KWD_SCAN,
+			RexxLexer.KWD_SCIENTIFIC,
+			RexxLexer.KWD_SELECT,
+			RexxLexer.KWD_SIGNAL,
+			RexxLexer.KWD_SOURCE,
+			RexxLexer.KWD_STEM,
+			RexxLexer.KWD_STREAM,
+			RexxLexer.KWD_SYNTAX,
+			RexxLexer.KWD_THEN,
+			RexxLexer.KWD_TO,
+			RexxLexer.KWD_TRACE,
+			RexxLexer.KWD_UNTIL,
+			RexxLexer.KWD_UPPER,
+			RexxLexer.KWD_VALUE,
+			RexxLexer.KWD_VAR,
+			RexxLexer.KWD_VERSION,
+			RexxLexer.KWD_WHEN,
+			RexxLexer.KWD_WHILE,
+			RexxLexer.KWD_WITH
+		);
+
 	@NotNull
 	@Override
 	public Lexer createLexer(Project project) {
@@ -71,11 +147,12 @@ public class RexxParserDefinition implements ParserDefinition {
 		return new ANTLRParserAdaptor(RexxLanguage.INSTANCE, parser) {
 			@Override
 			protected ParseTree parse(Parser parser, IElementType root) {
-				// start rule depends on root passed in; sometimes we want to create an ID node etc...
+				// start rule depends on root passed in
+				// sometimes we want to create an VAR_SYMBOL node etc...
 				if ( root instanceof IFileElementType ) {
 					return ((RexxParser) parser).file();
 				}
-				// let's hope it's an ID as needed by "rename function"
+				// let's hope it's an VAR_SYMBOL as needed by "rename function"
 				return ((RexxParser) parser).var_symbol();
 			}
 		};
@@ -98,6 +175,10 @@ public class RexxParserDefinition implements ParserDefinition {
 	}
 
 	public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+		// Need a spece if at least 1 part is a keyword
+		if (KEYWORDS.contains(left.getElementType()) ||
+			KEYWORDS.contains(right.getElementType()))
+			return SpaceRequirements.MUST;
 		return SpaceRequirements.MAY;
 	}
 

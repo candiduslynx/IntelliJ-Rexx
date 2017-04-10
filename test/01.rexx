@@ -1,13 +1,22 @@
 /* REXX */
-/* some sort of comment */
-/* %include somemod */
+/* Single-line comment */
+/* Multi-line
+ * comment
+ */
 
-mainpgm:
+/* %include statement */
+
+label:
   parse upper arg input_, setting ;
+  constant = 1const
+  special = sigl
+  strWithHex = "40"x"This is actually another string"
+  strWithBin = "101010"b
+
   if length(input_) > 12 then
     say "too long: <" || input_ || '> is longer than 12 characters!'
   else do
-    parse var input_ i1 i2 i3
+    parse var input_ i1 i2 i3 .
     i1 = strip(i1)
     i2 = strip(i2)
     i3 = strip(i3)
@@ -20,8 +29,3 @@ mainpgm:
     end
   end
 return 0
-/*hello beautiful
-*/
-test = "of" "concat"
-this = '00'x||asas
-'0'x

@@ -207,6 +207,9 @@ trace_                      :   KWD_TRACE ( NUMBER | trace_options )? ;
                             |   KWD_OFF
                             |   KWD_RESULTS
                             |   KWD_SCAN
+                            |   STRING
+                            |   symbol
+                            |   valueexp
                             ;
 upper_                      :   KWD_UPPER var_symbol+ ; // if stem -> signal of error (cannot do 'upper j.')
 
