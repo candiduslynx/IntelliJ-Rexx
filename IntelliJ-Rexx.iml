@@ -12,8 +12,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="antlr-4.6-complete" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="antlr-runtime-4.6" level="project" />
+    <orderEntry type="library" exported="" name="antlr-4.7-complete" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="antlr-runtime-4.7" level="project" />
   </component>
   <component name="POM File Configuration" pomFile="" />
 </module>

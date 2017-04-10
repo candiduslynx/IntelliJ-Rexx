@@ -1,4 +1,4 @@
-// Generated from C:/Users/shchea/Documents/Projects/IntelliJ-Rexx/src/grammar\RexxParser.g4 by ANTLR 4.6
+// Generated from C:/Users/shchea/Documents/Projects/IntelliJ-Rexx/src/grammar\RexxParser.g4 by ANTLR 4.7
 package com.intellij.rexx;
 
 import org.antlr.v4.runtime.ParserRuleContext;

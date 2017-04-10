@@ -1,4 +1,4 @@
-// Generated from C:/Users/shchea/Documents/Projects/IntelliJ-Rexx/src/grammar\RexxParser.g4 by ANTLR 4.6
+// Generated from C:/Users/shchea/Documents/Projects/IntelliJ-Rexx/src/grammar\RexxParser.g4 by ANTLR 4.7
 package com.intellij.rexx;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class RexxParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -7630,7 +7630,7 @@ public class RexxParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3y\u03bf\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3y\u03bf\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -7702,7 +7702,7 @@ public class RexxParser extends Parser {
 		"\u00bc\u00be\u00c0\u00c2\u00c4\u00c6\u00c8\u00ca\u00cc\u00ce\u00d0\u00d2"+
 		"\u00d4\u00d6\u00d8\u00da\u00dc\u00de\u00e0\u00e2\u00e4\u00e6\u00e8\2\20"+
 		"\3\2wx\3\2PR\4\2OORR\3\2?@\5\2\25\25\31\31\36\36\b\2\13\13\30\30++\63"+
-		"\63>>II\3\2uv\5\2OORRrr\3\2VW\3\2^_\4\2UUiq\3\2ah\3\2X[\4\2VW]]\u0403"+
+		"\63>>II\3\2uv\5\2OORRrr\3\2VW\3\2^_\4\2UUiq\3\2ah\3\2X[\4\2VW]]\2\u0403"+
 		"\2\u00ea\3\2\2\2\4\u00ee\3\2\2\2\6\u00f4\3\2\2\2\b\u0102\3\2\2\2\n\u0104"+
 		"\3\2\2\2\f\u010e\3\2\2\2\16\u0112\3\2\2\2\20\u0114\3\2\2\2\22\u0117\3"+
 		"\2\2\2\24\u0120\3\2\2\2\26\u0125\3\2\2\2\30\u0127\3\2\2\2\32\u0140\3\2"+
