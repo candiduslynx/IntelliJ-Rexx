@@ -64,12 +64,9 @@ public class RexxParserDefinition implements ParserDefinition {
 		PSIElementTypeFactory.createTokenSet(
 			RexxLanguage.INSTANCE,
 			RexxLexer.KWD_ADDRESS,
-			RexxLexer.KWD_ALL,
-			RexxLexer.KWD_APPEND,
 			RexxLexer.KWD_ARG,
 			RexxLexer.KWD_BY,
 			RexxLexer.KWD_CALL,
-			RexxLexer.KWD_COMMANDS,
 			RexxLexer.KWD_DIGITS,
 			RexxLexer.KWD_DO,
 			RexxLexer.KWD_DROP,
@@ -87,39 +84,28 @@ public class RexxParserDefinition implements ParserDefinition {
 			RexxLexer.KWD_FUZZ,
 			RexxLexer.KWD_HALT,
 			RexxLexer.KWD_IF,
-			RexxLexer.KWD_INPUT,
-			RexxLexer.KWD_INTERMEDIATES,
 			RexxLexer.KWD_INTERPRET,
 			RexxLexer.KWD_ITERATE,
-			RexxLexer.KWD_LABELS,
 			RexxLexer.KWD_LEAVE,
-			RexxLexer.KWD_LINEIN,
 			RexxLexer.KWD_NAME,
 			RexxLexer.KWD_NOP,
-			RexxLexer.KWD_NORMAL,
 			RexxLexer.KWD_NOVALUE,
 			RexxLexer.KWD_NUMERIC,
 			RexxLexer.KWD_OFF,
 			RexxLexer.KWD_ON,
 			RexxLexer.KWD_OPTIONS,
 			RexxLexer.KWD_OTHERWISE,
-			RexxLexer.KWD_OUTPUT,
 			RexxLexer.KWD_PARSE,
 			RexxLexer.KWD_PROCEDURE,
 			RexxLexer.KWD_PULL,
 			RexxLexer.KWD_PUSH,
 			RexxLexer.KWD_QUEUE,
-			RexxLexer.KWD_REPLACE,
-			RexxLexer.KWD_RESULTS,
 			RexxLexer.KWD_RETURN,
 			RexxLexer.KWD_SAY,
-			RexxLexer.KWD_SCAN,
 			RexxLexer.KWD_SCIENTIFIC,
 			RexxLexer.KWD_SELECT,
 			RexxLexer.KWD_SIGNAL,
 			RexxLexer.KWD_SOURCE,
-			RexxLexer.KWD_STEM,
-			RexxLexer.KWD_STREAM,
 			RexxLexer.KWD_SYNTAX,
 			RexxLexer.KWD_THEN,
 			RexxLexer.KWD_TO,
@@ -175,7 +161,7 @@ public class RexxParserDefinition implements ParserDefinition {
 	}
 
 	public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
-		// Need a spece if at least 1 part is a keyword
+		// Need a space if at least 1 part is a keyword
 		if (KEYWORDS.contains(left.getElementType()) ||
 			KEYWORDS.contains(right.getElementType()))
 			return SpaceRequirements.MUST;

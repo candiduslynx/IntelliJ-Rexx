@@ -54,12 +54,30 @@ group_                      :   do_
                             |   if_
                             |   select_
                             ;
-  do_                       :   do_specification ncl? instruction_list? do_ending ;
-    do_ending               :   KWD_END var_symbol? ncl? ;
+do_                         :   KWD_DO do_rep? do_cond? ncl
+                                       instruction_list?
+                                KWD_END var_symbol? ncl? ;
+  do_rep                    :   assignment do_cnt?
+                            |   KWD_FOREVER
+                            |   expression
+                            ;
+    do_cnt                  :   dot dob? dof?
+                            |   dot dof? dob?
+                            |   dob dot? dof?
+                            |   dob dof? dot?
+                            |   dof dot? dob?
+                            |   dof dob? dot?
+                            ;
+      dot                   :   KWD_TO expression ;
+      dob                   :   KWD_BY expression ;
+      dof                   :   KWD_FOR expression ;
+    do_cond                 :   KWD_WHILE expression
+                            |   KWD_UNTIL expression
+                            ;
   if_                       :   KWD_IF expression ncl? then_ (ncl else_)? ;
     then_                   :   KWD_THEN ncl? instruction ;
     else_                   :   KWD_ELSE ncl? instruction ;
-  select_                   :   KWD_SELECT ncl? select_body KWD_END ncl? ;
+  select_                   :   KWD_SELECT ncl select_body KWD_END ncl? ;
     select_body             :   when_+ otherwise_? ;
       when_                 :   KWD_WHEN expression ncl? then_ ;
       otherwise_            :   KWD_OTHERWISE ncl? instruction_list? ;
@@ -68,40 +86,12 @@ group_                      :   do_
 Note: The next part concentrates on the instructions.
 It leaves unspecified the various forms of symbol, template and expression. */
 address_                    :   KWD_ADDRESS
-                                (
-                                    ( taken_constant expression? | valueexp )
-                                    ( KWD_WITH connection_ )?
-                                )?
+                                ( taken_constant expression? | valueexp )?
                             ;
   taken_constant            :   symbol
                             |   STRING
                             ;
   valueexp                  :   KWD_VALUE expression ;
-  connection_               :   error adio?
-                            |   input adeo?
-                            |   output adei?
-                            ;
-    adio                    :   input output?
-                            |   output input?
-                            ;
-      input                 :   KWD_INPUT resourcei ;
-        resourcei           :   resources
-                            |   KWD_NORMAL
-                            ;
-      output                :   KWD_OUTPUT resourceo ;
-        resourceo           :   KWD_APPEND resources
-                            |   KWD_REPLACE resources
-                            |   resources
-                            |   KWD_NORMAL
-                            ;
-    adeo                    :   error output?
-                            |   output error?
-                            ;
-      error                 :   KWD_ERROR resourceo ;
-    adei                    :   error input?
-                            |   input error?
-                            ;
-resources                   :   ( KWD_STREAM | KWD_STEM ) var_symbol ;
 arg_                        :   KWD_ARG template_list? ;
 call_                       :   KWD_CALL ( callon_spec | function_name call_parms? ) ;
   callon_spec               :   KWD_ON callable_condition ( KWD_NAME function_name )?
@@ -116,36 +106,6 @@ call_                       :   KWD_CALL ( callon_spec | function_name call_parm
                             ;
   expression_list           :   COMMA* expression
                                 ( COMMA+ expression )* ;
-do_specification            :   do_repetitive
-                            |   do_simple
-                            ;
-  do_simple                 :   KWD_DO ;
-  do_repetitive             :   KWD_DO KWD_FOREVER docond?
-                            |   KWD_DO docond
-                            |   KWD_DO dorep docond?
-                            ;
-  docond                    :   KWD_WHILE expression
-                            |   KWD_UNTIL expression
-                            ;
-  dorep                     :   assignment docount?
-                            |   expression
-                            ;
-    docount                 :   dot dobf?
-                            |   dob dotf?
-                            |   dof dotb?
-                            ;
-      dobf                  :   dob dof?
-                            |   dof dob?
-                            ;
-      dotf                  :   dot dof?
-                            |   dof dot?
-                            ;
-      dotb                  :   dot dob?
-                            |   dob dot?
-                            ;
-      dot                   :   KWD_TO expression ;
-      dob                   :   KWD_BY expression ;
-      dof                   :   KWD_FOR expression ;
 drop_                       :   KWD_DROP variable_list ;
   variable_list             :   ( vref | var_symbol )+ ;
     vref                    :   BR_O var_symbol BR_C ;
@@ -159,7 +119,13 @@ leave_                      :   KWD_LEAVE var_symbol? ;
 nop_                        :   KWD_NOP ;
 numeric_                    :   KWD_NUMERIC ( numeric_digits | numeric_form | numeric_fuzz ) ;
   numeric_digits            :   KWD_DIGITS expression? ;
-  numeric_form              :   KWD_FORM ( KWD_ENGINEERING | KWD_SCIENTIFIC | valueexp ) ;
+  numeric_form              :   KWD_FORM
+                                (   KWD_ENGINEERING
+                                |   KWD_SCIENTIFIC
+                                |   valueexp
+                                |   expression
+                                )?
+                            ;
   numeric_fuzz              :   KWD_FUZZ expression? ;
 options_                    :   KWD_OPTIONS expression ;
 parse_                      :   KWD_PARSE KWD_UPPER? parse_type template_list? ;
@@ -190,28 +156,16 @@ signal_                     :   KWD_SIGNAL ( signal_spec | valueexp | taken_cons
                             |   KWD_NOVALUE
                             |   KWD_SYNTAX
                             ;
-trace_                      :   KWD_TRACE ( NUMBER | trace_options )? ;
-  trace_options             :   prefix_option* trace_option
-                            |   prefix_option+
+trace_                      :   KWD_TRACE
+                                (   taken_constant
+                                |   valueexp
+                                |   expression
+                                |   KWD_ERROR
+                                |   KWD_FAILURE
+                                |   KWD_OFF
+                                )
                             ;
-    prefix_option           :   QUESTION
-                            |   EXCLAMATION
-                            ;
-    trace_option            :   KWD_NORMAL
-                            |   KWD_ALL
-                            |   KWD_COMMANDS
-                            |   KWD_ERROR
-                            |   KWD_FAILURE
-                            |   KWD_INTERMEDIATES
-                            |   KWD_LABELS
-                            |   KWD_OFF
-                            |   KWD_RESULTS
-                            |   KWD_SCAN
-                            |   STRING
-                            |   symbol
-                            |   valueexp
-                            ;
-upper_                      :   KWD_UPPER var_symbol+ ; // if stem -> signal of error (cannot do 'upper j.')
+upper_                      :   KWD_UPPER var_symbol+ ; // if stem -> error (cannot do 'upper j.')
 
 /* Note: The next section describes templates. */
 template_list               :   COMMA* template_ ( COMMA+ template_ )* ;

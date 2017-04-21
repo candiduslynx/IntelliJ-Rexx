@@ -120,8 +120,6 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.CMP_LEq:
 			case RexxLexer.CMP_NM:
 			case RexxLexer.CMP_NL:
-			case RexxLexer.QUESTION:
-			case RexxLexer.EXCLAMATION:
 				attrKey = OPERATION_SIGN;
 				break;
 			case RexxLexer.STMT_INCLUDE:
@@ -131,12 +129,9 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 				attrKey = VAR_SYMBOL;
 				break;
 			case RexxLexer.KWD_ADDRESS:
-			case RexxLexer.KWD_ALL:
-			case RexxLexer.KWD_APPEND:
 			case RexxLexer.KWD_ARG:
 			case RexxLexer.KWD_BY:
 			case RexxLexer.KWD_CALL:
-			case RexxLexer.KWD_COMMANDS:
 			case RexxLexer.KWD_DIGITS:
 			case RexxLexer.KWD_DO:
 			case RexxLexer.KWD_DROP:
@@ -154,39 +149,28 @@ public class RexxSyntaxHighlighter extends SyntaxHighlighterBase {
 			case RexxLexer.KWD_FUZZ:
 			case RexxLexer.KWD_HALT:
 			case RexxLexer.KWD_IF:
-			case RexxLexer.KWD_INPUT:
-			case RexxLexer.KWD_INTERMEDIATES:
 			case RexxLexer.KWD_INTERPRET:
 			case RexxLexer.KWD_ITERATE:
-			case RexxLexer.KWD_LABELS:
 			case RexxLexer.KWD_LEAVE:
-			case RexxLexer.KWD_LINEIN:
 			case RexxLexer.KWD_NAME:
 			case RexxLexer.KWD_NOP:
-			case RexxLexer.KWD_NORMAL:
 			case RexxLexer.KWD_NOVALUE:
 			case RexxLexer.KWD_NUMERIC:
 			case RexxLexer.KWD_OFF:
 			case RexxLexer.KWD_ON:
 			case RexxLexer.KWD_OPTIONS:
 			case RexxLexer.KWD_OTHERWISE:
-			case RexxLexer.KWD_OUTPUT:
 			case RexxLexer.KWD_PARSE:
 			case RexxLexer.KWD_PROCEDURE:
 			case RexxLexer.KWD_PULL:
 			case RexxLexer.KWD_PUSH:
 			case RexxLexer.KWD_QUEUE:
-			case RexxLexer.KWD_REPLACE:
 			case RexxLexer.KWD_RETURN:
-			case RexxLexer.KWD_RESULTS:
 			case RexxLexer.KWD_SAY:
 			case RexxLexer.KWD_SCIENTIFIC:
-			case RexxLexer.KWD_SCAN:
 			case RexxLexer.KWD_SELECT:
 			case RexxLexer.KWD_SIGNAL:
 			case RexxLexer.KWD_SOURCE:
-			case RexxLexer.KWD_STEM:
-			case RexxLexer.KWD_STREAM:
 			case RexxLexer.KWD_SYNTAX:
 			case RexxLexer.KWD_THEN:
 			case RexxLexer.KWD_TO:

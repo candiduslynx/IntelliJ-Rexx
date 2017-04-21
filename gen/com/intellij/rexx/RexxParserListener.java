@@ -168,15 +168,65 @@ public interface RexxParserListener extends ParseTreeListener {
 	 */
 	void exitDo_(RexxParser.Do_Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link RexxParser#do_ending}.
+	 * Enter a parse tree produced by {@link RexxParser#do_rep}.
 	 * @param ctx the parse tree
 	 */
-	void enterDo_ending(RexxParser.Do_endingContext ctx);
+	void enterDo_rep(RexxParser.Do_repContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RexxParser#do_ending}.
+	 * Exit a parse tree produced by {@link RexxParser#do_rep}.
 	 * @param ctx the parse tree
 	 */
-	void exitDo_ending(RexxParser.Do_endingContext ctx);
+	void exitDo_rep(RexxParser.Do_repContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#do_cnt}.
+	 * @param ctx the parse tree
+	 */
+	void enterDo_cnt(RexxParser.Do_cntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#do_cnt}.
+	 * @param ctx the parse tree
+	 */
+	void exitDo_cnt(RexxParser.Do_cntContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#dot}.
+	 * @param ctx the parse tree
+	 */
+	void enterDot(RexxParser.DotContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#dot}.
+	 * @param ctx the parse tree
+	 */
+	void exitDot(RexxParser.DotContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#dob}.
+	 * @param ctx the parse tree
+	 */
+	void enterDob(RexxParser.DobContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#dob}.
+	 * @param ctx the parse tree
+	 */
+	void exitDob(RexxParser.DobContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#dof}.
+	 * @param ctx the parse tree
+	 */
+	void enterDof(RexxParser.DofContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#dof}.
+	 * @param ctx the parse tree
+	 */
+	void exitDof(RexxParser.DofContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RexxParser#do_cond}.
+	 * @param ctx the parse tree
+	 */
+	void enterDo_cond(RexxParser.Do_condContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RexxParser#do_cond}.
+	 * @param ctx the parse tree
+	 */
+	void exitDo_cond(RexxParser.Do_condContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RexxParser#if_}.
 	 * @param ctx the parse tree
@@ -278,106 +328,6 @@ public interface RexxParserListener extends ParseTreeListener {
 	 */
 	void exitValueexp(RexxParser.ValueexpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RexxParser#connection_}.
-	 * @param ctx the parse tree
-	 */
-	void enterConnection_(RexxParser.Connection_Context ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#connection_}.
-	 * @param ctx the parse tree
-	 */
-	void exitConnection_(RexxParser.Connection_Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#adio}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdio(RexxParser.AdioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#adio}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdio(RexxParser.AdioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#input}.
-	 * @param ctx the parse tree
-	 */
-	void enterInput(RexxParser.InputContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#input}.
-	 * @param ctx the parse tree
-	 */
-	void exitInput(RexxParser.InputContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#resourcei}.
-	 * @param ctx the parse tree
-	 */
-	void enterResourcei(RexxParser.ResourceiContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#resourcei}.
-	 * @param ctx the parse tree
-	 */
-	void exitResourcei(RexxParser.ResourceiContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#output}.
-	 * @param ctx the parse tree
-	 */
-	void enterOutput(RexxParser.OutputContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#output}.
-	 * @param ctx the parse tree
-	 */
-	void exitOutput(RexxParser.OutputContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#resourceo}.
-	 * @param ctx the parse tree
-	 */
-	void enterResourceo(RexxParser.ResourceoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#resourceo}.
-	 * @param ctx the parse tree
-	 */
-	void exitResourceo(RexxParser.ResourceoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#adeo}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdeo(RexxParser.AdeoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#adeo}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdeo(RexxParser.AdeoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#error}.
-	 * @param ctx the parse tree
-	 */
-	void enterError(RexxParser.ErrorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#error}.
-	 * @param ctx the parse tree
-	 */
-	void exitError(RexxParser.ErrorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#adei}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdei(RexxParser.AdeiContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#adei}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdei(RexxParser.AdeiContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#resources}.
-	 * @param ctx the parse tree
-	 */
-	void enterResources(RexxParser.ResourcesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#resources}.
-	 * @param ctx the parse tree
-	 */
-	void exitResources(RexxParser.ResourcesContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link RexxParser#arg_}.
 	 * @param ctx the parse tree
 	 */
@@ -437,126 +387,6 @@ public interface RexxParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression_list(RexxParser.Expression_listContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#do_specification}.
-	 * @param ctx the parse tree
-	 */
-	void enterDo_specification(RexxParser.Do_specificationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#do_specification}.
-	 * @param ctx the parse tree
-	 */
-	void exitDo_specification(RexxParser.Do_specificationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#do_simple}.
-	 * @param ctx the parse tree
-	 */
-	void enterDo_simple(RexxParser.Do_simpleContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#do_simple}.
-	 * @param ctx the parse tree
-	 */
-	void exitDo_simple(RexxParser.Do_simpleContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#do_repetitive}.
-	 * @param ctx the parse tree
-	 */
-	void enterDo_repetitive(RexxParser.Do_repetitiveContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#do_repetitive}.
-	 * @param ctx the parse tree
-	 */
-	void exitDo_repetitive(RexxParser.Do_repetitiveContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#docond}.
-	 * @param ctx the parse tree
-	 */
-	void enterDocond(RexxParser.DocondContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#docond}.
-	 * @param ctx the parse tree
-	 */
-	void exitDocond(RexxParser.DocondContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dorep}.
-	 * @param ctx the parse tree
-	 */
-	void enterDorep(RexxParser.DorepContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dorep}.
-	 * @param ctx the parse tree
-	 */
-	void exitDorep(RexxParser.DorepContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#docount}.
-	 * @param ctx the parse tree
-	 */
-	void enterDocount(RexxParser.DocountContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#docount}.
-	 * @param ctx the parse tree
-	 */
-	void exitDocount(RexxParser.DocountContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dobf}.
-	 * @param ctx the parse tree
-	 */
-	void enterDobf(RexxParser.DobfContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dobf}.
-	 * @param ctx the parse tree
-	 */
-	void exitDobf(RexxParser.DobfContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dotf}.
-	 * @param ctx the parse tree
-	 */
-	void enterDotf(RexxParser.DotfContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dotf}.
-	 * @param ctx the parse tree
-	 */
-	void exitDotf(RexxParser.DotfContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dotb}.
-	 * @param ctx the parse tree
-	 */
-	void enterDotb(RexxParser.DotbContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dotb}.
-	 * @param ctx the parse tree
-	 */
-	void exitDotb(RexxParser.DotbContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dot}.
-	 * @param ctx the parse tree
-	 */
-	void enterDot(RexxParser.DotContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dot}.
-	 * @param ctx the parse tree
-	 */
-	void exitDot(RexxParser.DotContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dob}.
-	 * @param ctx the parse tree
-	 */
-	void enterDob(RexxParser.DobContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dob}.
-	 * @param ctx the parse tree
-	 */
-	void exitDob(RexxParser.DobContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#dof}.
-	 * @param ctx the parse tree
-	 */
-	void enterDof(RexxParser.DofContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#dof}.
-	 * @param ctx the parse tree
-	 */
-	void exitDof(RexxParser.DofContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RexxParser#drop_}.
 	 * @param ctx the parse tree
@@ -847,36 +677,6 @@ public interface RexxParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTrace_(RexxParser.Trace_Context ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#trace_options}.
-	 * @param ctx the parse tree
-	 */
-	void enterTrace_options(RexxParser.Trace_optionsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#trace_options}.
-	 * @param ctx the parse tree
-	 */
-	void exitTrace_options(RexxParser.Trace_optionsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#prefix_option}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrefix_option(RexxParser.Prefix_optionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#prefix_option}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrefix_option(RexxParser.Prefix_optionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RexxParser#trace_option}.
-	 * @param ctx the parse tree
-	 */
-	void enterTrace_option(RexxParser.Trace_optionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RexxParser#trace_option}.
-	 * @param ctx the parse tree
-	 */
-	void exitTrace_option(RexxParser.Trace_optionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RexxParser#upper_}.
 	 * @param ctx the parse tree

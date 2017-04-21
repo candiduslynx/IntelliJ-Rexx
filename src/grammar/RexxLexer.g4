@@ -13,12 +13,9 @@ CONTINUATION                    :   Continue_               -> channel(HIDDEN);
 
 // Keywords
 KWD_ADDRESS                     :   A D D R E S S ;
-KWD_ALL                         :   A L L ;
-KWD_APPEND                      :   A P P E N D ;
 KWD_ARG                         :   A R G ;
 KWD_BY                          :   B Y ;
 KWD_CALL                        :   C A L L ;
-KWD_COMMANDS                    :   C O M M A N D S ;
 KWD_DIGITS                      :   D I G I T S ;
 KWD_DO                          :   D O ;
 KWD_DROP                        :   D R O P ;
@@ -36,39 +33,28 @@ KWD_FORM                        :   F O R M ;
 KWD_FUZZ                        :   F U Z Z ;
 KWD_HALT                        :   H A L T ;
 KWD_IF                          :   I F ;
-KWD_INPUT                       :   I N P U T ;
-KWD_INTERMEDIATES               :   I N T E R M E D I A T E S ;
 KWD_INTERPRET                   :   I N T E R P R E T ;
 KWD_ITERATE                     :   I T E R A T E ;
-KWD_LABELS                      :   L A B E L S ;
 KWD_LEAVE                       :   L E A V E ;
-KWD_LINEIN                      :   L I N E I N ;
 KWD_NAME                        :   N A M E ;
 KWD_NOP                         :   N O P ;
-KWD_NORMAL                      :   N O R M A L ;
 KWD_NOVALUE                     :   N O V A L U E ;
 KWD_NUMERIC                     :   N U M E R I C ;
 KWD_OFF                         :   O F F ;
 KWD_ON                          :   O N ;
 KWD_OPTIONS                     :   O P T I O N S ;
 KWD_OTHERWISE                   :   O T H E R W I S E ;
-KWD_OUTPUT                      :   O U T P U T ;
 KWD_PARSE                       :   P A R S E ;
 KWD_PROCEDURE                   :   P R O C E D U R E ;
 KWD_PULL                        :   P U L L ;
 KWD_PUSH                        :   P U S H ;
 KWD_QUEUE                       :   Q U E U E ;
-KWD_REPLACE                     :   R E P L A C E ;
 KWD_RETURN                      :   R E T U R N ;
-KWD_RESULTS                     :   R E S U L T S ;
 KWD_SAY                         :   S A Y ;
 KWD_SCIENTIFIC                  :   S C I E N T I F I C ;
-KWD_SCAN                        :   S C A N ;
 KWD_SELECT                      :   S E L E C T ;
 KWD_SIGNAL                      :   S I G N A L ;
 KWD_SOURCE                      :   S O U R C E ;
-KWD_STEM                        :   S T E M ;
-KWD_STREAM                      :   S T R E A M ;
 KWD_SYNTAX                      :   S Y N T A X ;
 KWD_THEN                        :   T H E N ;
 KWD_TO                          :   T O ;
@@ -167,10 +153,6 @@ STOP                            :   Stop_ ;
 COMMA                           :   Comma_ ;
 // :
 COLON                           :   Colon_ ;
-// ?
-QUESTION                        :   Question_mark_ ;
-// !
-EXCLAMATION                     :   Exclamation_mark_ ;
 // End of line
 EOL                             :   Eol_ ;
 // Semicolumn
